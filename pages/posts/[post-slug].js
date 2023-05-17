@@ -15,7 +15,6 @@ export async function getStaticPaths() {
 // Dev mode : SSR
 // Prod mode : pre-render by server (nodejs) and serve a json file for CSR
 export async function getStaticProps(context) {
-  console.log({context});
   const post = await getPost(context.params['post-slug']);
   return {
     props: { post },

@@ -1,8 +1,16 @@
 // Prod mode : static HTML
 import Head from 'next/head';
 import Link from 'next/link';
+import { getPostNamesAndTitles } from '../lib/posts';
 
-function HomePage() {
+export async function getStaticProps(context) {
+  const posts = await getPostNamesAndTitles();
+  return {
+    props: { posts },
+  };
+}
+
+function HomePage({posts}) {
   return (
     <>
       <Head>
@@ -11,9 +19,11 @@ function HomePage() {
       <main>
         <h1>AG's blog</h1>
         <ul>
-          <li>
-            <Link href="/posts/first-post">First Post</Link>
-          </li>
+          {posts.map((post) => (
+            <li key={post.slug}>
+              <Link href={`/posts/${post.slug}`}>{post.title}</Link>
+            </li>
+          ))}
         </ul>
       </main>
     </>
