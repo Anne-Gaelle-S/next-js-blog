@@ -1,7 +1,14 @@
+import NavBar from "../components/NavBar";
+
 function App({ Component, pageProps}) {
   console.log('[App] render  ', pageProps);
-  return ( 
-    <Component {...pageProps} />
+  return (
+    <>
+      <header>
+        <NavBar />
+      </header>
+      <Component {...pageProps} />
+    </>
   );
 }
 
