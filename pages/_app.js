@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import NavBar from "../components/NavBar";
+import '../styles/global.css';
 
 function App({ Component, pageProps}) {
   return (
