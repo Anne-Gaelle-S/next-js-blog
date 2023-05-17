@@ -1,15 +1,12 @@
 // Prod mode : SSG (static side generation HTML + JSON, uses getStaticProps)
 import Head from 'next/head';
-import { getPost } from '../../lib/posts';
+import { getPost, getSlugs } from '../../lib/posts';
 
 // Check if given slug match a valid paths for this route
 export async function getStaticPaths() {
-  console.log('getStaticPaths');
+  const allPostSlugs = await getSlugs();
   return {
-    paths: [
-      { params: { 'post-slug': "first-post" } },
-      { params: { 'post-slug': "second-post" } },
-    ],
+    paths: allPostSlugs.map((slug) => ({ params: { 'post-slug': slug }})),
     // dynamic route results in static HTML files being generated because of this fallback :
     fallback: false, // if none paths above matches the request URL we will show 404 Not Found page
   };
