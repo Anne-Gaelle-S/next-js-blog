@@ -18,7 +18,7 @@ function FirstPostPage({post}) {
   return (
     <>
       <Head>
-        <title>{post.title} - AG's blog</title>
+        <title>{`${post.title} - AG's blog`}</title>
       </Head>
       <h1>{post.title}</h1>
       <p>{post.body}</p>
