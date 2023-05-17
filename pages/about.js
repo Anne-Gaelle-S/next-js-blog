@@ -1,5 +1,4 @@
 function AboutPage() {
-  console.log("[AboutPage] render");
   return (
     <>
       <main>

@@ -1,5 +1,4 @@
 function HomePage() {
-  console.log("[HomePage] render");
   return (
     <>
       <main>

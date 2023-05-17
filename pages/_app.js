@@ -1,7 +1,6 @@
 import NavBar from "../components/NavBar";
 
 function App({ Component, pageProps}) {
-  console.log('[App] render  ', pageProps);
   return (
     <>
       <header>
