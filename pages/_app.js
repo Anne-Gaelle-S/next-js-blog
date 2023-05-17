@@ -8,6 +8,7 @@ function App({ Component, pageProps}) {
       <Head>
         <title>AG's blog</title>
         <meta name="description" value="This is my blog" />
+        <link rel="icon" href="/icons/favicon.ico" />
       </Head>
       <header>
         <NavBar />
