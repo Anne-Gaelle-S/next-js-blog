@@ -1,3 +1,4 @@
+// Prod mode : static HTML
 import Head from 'next/head';
 
 function AboutPage() {

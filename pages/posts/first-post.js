@@ -1,5 +1,8 @@
+// Prod mode : SSG (static side generation HTML + JSON, uses getStaticProps)
 import Head from 'next/head';
 
+// Dev mode : SSR
+// Prod mode : pre-render by server (nodejs) and serve a json file for CSR
 export async function getStaticProps() {
   return {
     props: {
@@ -11,6 +14,8 @@ export async function getStaticProps() {
   };
 }
 
+// Dev mode : SSR & CSR
+// Prod mode : CSR
 function FirstPostPage({post}) {
   return (
     <>
