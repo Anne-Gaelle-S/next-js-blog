@@ -4,10 +4,15 @@ import DarkTheme from "./DarkTheme";
 function ThemeSwitch() {
   const [darkMode, setDarkMode] = useState(false);
 
+  const handleClick = () => {
+    localStorage.setItem('darkMode', JSON.stringify(!darkMode));
+    setDarkMode(!darkMode);
+  }
+
   const text = darkMode ? 'Light Mode' : 'Dark Mode';
   return (
     <>
-      <button onClick={() => setDarkMode(!darkMode)}>
+      <button onClick={handleClick}>
         {text}
       </button>
       <style jsx>{`
